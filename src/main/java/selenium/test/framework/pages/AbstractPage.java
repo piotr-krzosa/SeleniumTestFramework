@@ -27,6 +27,16 @@ public abstract class AbstractPage {
         CustomLogger.info(elementInfo + " was clicked");
     }
 
+    public void selectCheckbox(WebElement element, boolean select){
+        if (select && !element.isSelected()) {
+            CustomLogger.info(ElementHelper.getElementLogInfo(element) + " is not selected");
+            clickElement(element);
+        } else if (!select & element.isSelected()) {
+            CustomLogger.info(ElementHelper.getElementLogInfo(element) + " is selected");
+            clickElement(element);
+        }
+    }
+
     public boolean isElementDisplayed(WebElement element) {
         CustomLogger.info(ElementHelper.getElementLogInfo(element) + " was checked if is displayed. Result: " + element.isDisplayed());
         return element.isDisplayed();

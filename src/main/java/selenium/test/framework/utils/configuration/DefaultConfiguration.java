@@ -12,6 +12,7 @@ public class DefaultConfiguration {
 
     public static String DRIVERS_PATH = "drivers/";
     public static String CONFIGURATION_PATH = "configuration/";
+    public static String DATA_PATH = "data/";
 
     public static String PROPERTIES_FILE_NAME = "base.properties";
     public static String PROPERTIES_FILE_PATH = CONFIGURATION_PATH + PROPERTIES_FILE_NAME;

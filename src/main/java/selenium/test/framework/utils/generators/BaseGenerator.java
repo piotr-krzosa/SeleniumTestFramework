@@ -5,6 +5,16 @@ import java.util.Random;
 
 public class BaseGenerator {
 
+    public static Date getRandomDate() {
+        // TODO date generator - date between startDate and endDate
+        return new Date();
+    }
+
+    public static boolean getRandomBoolean() {
+        return new Random().nextBoolean();
+    }
+
+    // TODO check why timestamp is not unique
     public static String getTimestamp() {
         return String.valueOf(new Date().getTime());
     }

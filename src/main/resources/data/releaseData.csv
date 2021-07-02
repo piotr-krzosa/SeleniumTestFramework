@@ -1,0 +1,5 @@
+name,startDate,endDate,description,isActive
+rls_1,2010-06-04,2021-11-23,opis1,true
+rls_14,2010-07-04,2021-11-23,opis2,true
+rls_3,2010-08-04,2025-11-23,opis3,true
+rls_6,2010-09-04,2026-11-23,opis5,true

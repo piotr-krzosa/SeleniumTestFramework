@@ -27,4 +27,6 @@ public class AddEnvironmentTests extends AbstractTest {
 
         Assert.assertTrue(environmentListPage.isInfoBoxDisplayed());
     }
+
+
 }

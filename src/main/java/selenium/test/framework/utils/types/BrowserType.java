@@ -6,5 +6,6 @@ public enum BrowserType {
     EDGE,
     IE,
     SAFARI,
-    OPERA
+    OPERA,
+    REMOTE_CHROME
 }

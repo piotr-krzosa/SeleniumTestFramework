@@ -2,12 +2,16 @@ package selenium.test.framework.utils.drivers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import selenium.test.framework.utils.configuration.DefaultConfiguration;
 import selenium.test.framework.utils.files.PathHelper;
 import selenium.test.framework.utils.logger.CustomLogger;
 import selenium.test.framework.utils.types.BrowserType;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
@@ -31,6 +35,13 @@ public class DriverFactory {
             //TODO
         } else if (browserType == BrowserType.IE) {
             //TODO
+        } else if (browserType == BrowserType.REMOTE_CHROME) {
+            try {
+                ChromeOptions chromeOptions = new ChromeOptions();
+                driver = new RemoteWebDriver(new URL("http://192.168.1.3:4444/wd/hub"), chromeOptions);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
 
         driver.manage().timeouts().implicitlyWait(implicitlyWait, TimeUnit.SECONDS);
