@@ -1,8 +1,13 @@
 package selenium.test.framework.utils.generators;
 
+import java.util.Date;
 import java.util.Random;
 
 public class BaseGenerator {
+
+    public static String getTimestamp() {
+        return String.valueOf(new Date().getTime());
+    }
 
     public static int getRandomNumber(int min, int max) {
         return new Random().nextInt(max - min + 1) + min;

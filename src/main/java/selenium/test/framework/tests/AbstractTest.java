@@ -6,7 +6,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
+import selenium.test.framework.utils.configuration.FrameworkConfiguration;
 import selenium.test.framework.utils.drivers.DriverFactory;
+import selenium.test.framework.utils.logger.CustomLogger;
 import selenium.test.framework.utils.screen.Screenshot;
 import selenium.test.framework.utils.test.TestHelper;
 import selenium.test.framework.utils.types.BrowserType;
@@ -21,11 +23,14 @@ public class AbstractTest {
     @Parameters({"browserType"})
     @BeforeSuite
     public void setUpSuite(String browserType) {
+        FrameworkConfiguration.configure();
+
         screenshot = new Screenshot();
         driver = new DriverFactory().getDriver(BrowserType.valueOf(browserType.toUpperCase()));
 
         // TODO read config from file
         driver.get("http://beta.demo.testarena.pl/login");
+        CustomLogger.info("Page 'http://beta.demo.testarena.pl/login' opened");
     }
 
     @AfterSuite

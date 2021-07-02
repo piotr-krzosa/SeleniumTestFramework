@@ -1,10 +1,11 @@
-package selenium.test.framework.pages;
+package selenium.test.framework.pages.environment;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import selenium.test.framework.pages.PortalPage;
 
-public class AddVersionPage extends PortalPage{
+public class AddEnvironmentPage extends PortalPage {
 
     @FindBy(id = "name")
     private WebElement nameField;
@@ -15,18 +16,18 @@ public class AddVersionPage extends PortalPage{
     @FindBy(id = "save")
     private WebElement saveButton;
 
-    public AddVersionPage(WebDriver driver) {
+    public AddEnvironmentPage(WebDriver driver) {
         super(driver);
     }
 
-    public AddVersionPage fillForm (String name, String description) {
+    public AddEnvironmentPage fillForm(String name, String description) {
         fillElement(nameField, name);
         fillElement(descriptionField, description);
         return this;
     }
 
-    public VersionListPage submitForm() {
+    public EnvironmentListPage submitForm() {
         clickElement(saveButton);
-        return new VersionListPage(driver);
+        return new EnvironmentListPage(driver);
     }
 }

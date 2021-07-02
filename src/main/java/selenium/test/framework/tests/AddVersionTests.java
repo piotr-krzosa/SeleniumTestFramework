@@ -5,17 +5,18 @@ import org.testng.annotations.Test;
 import selenium.test.framework.pages.PortalPage;
 import selenium.test.framework.utils.generators.BaseGenerator;
 
-import java.util.Date;
-
 public class AddVersionTests extends AbstractTest {
 
+    /**
+     * Example with action chain
+     */
     @Test
     public void successAddVersionTest() {
         Assert.assertTrue(
                 new PortalPage(driver).openVersionListPage()
                         .openAddVersionPage()
                         .fillForm(
-                                "ver_" + new Date().getTime(),
+                                "ver_" + BaseGenerator.getTimestamp(),
                                 BaseGenerator.getRandomString(BaseGenerator.getRandomNumber(0,255))
                         )
                         .submitForm()

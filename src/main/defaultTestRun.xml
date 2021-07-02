@@ -8,6 +8,7 @@
         <classes>
             <class name="selenium.test.framework.tests.LoginTests"/>
             <class name="selenium.test.framework.tests.AddVersionTests"/>
+            <class name="selenium.test.framework.tests.AddEnvironmentTests"/>
             <class name="selenium.test.framework.tests.LogoutTests"/>
         </classes>
     </test>
