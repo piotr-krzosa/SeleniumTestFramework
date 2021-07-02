@@ -13,7 +13,7 @@ public class Screenshot {
 
     public void makeScreenshot(WebDriver driver, String destinationFileName) {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileHelper.copyFile(screenshot, PathHelper.getProjectPath() + DefaultConfiguration.SCREENSHOTS_PATH + destinationFileName + ".png");
+        FileHelper.copyFile(screenshot, PathHelper.getProjectPath() + DefaultConfiguration.SCREENSHOTS_PATH + destinationFileName);
     }
 
     public void makeCustomScreenshot(WebDriver driver, String destinationFilePath) {

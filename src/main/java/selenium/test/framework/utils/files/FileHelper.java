@@ -8,6 +8,10 @@ import java.io.IOException;
 
 public class FileHelper {
 
+    public static void copyFile(String fileToCopyPath, String destinationFilePath) {
+        copyFile(new File(fileToCopyPath), new File(destinationFilePath));
+    }
+
     public static void copyFile(File fileToCopy, String destinationFilePath) {
         copyFile(fileToCopy, new File(destinationFilePath));
     }

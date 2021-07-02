@@ -10,7 +10,7 @@ public class LoginTests extends AbstractTest {
     public void successLoginTest() {
         Assert.assertTrue(
                 new LoginPage(driver)
-                        .fillForm("administrator@testarena.pl","sumXQQ72$L")
+                        .fillForm(properties.getProperty("email"), properties.getProperty("password"))
                         .submitForm()
                         .isLogoutButtonDisplayed());
     }

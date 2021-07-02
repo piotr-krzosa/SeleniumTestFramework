@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
-    public WebDriver getDriver(BrowserType browserType) {
+    public WebDriver getDriver(BrowserType browserType, int implicitlyWait, boolean windowMaximize) {
         WebDriver driver = null;
 
         if (browserType == BrowserType.CHROME) {
@@ -33,10 +33,10 @@ public class DriverFactory {
             //TODO
         }
 
-        // TODO read config from file
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        CustomLogger.info("Driver configured with parameters: implicitlyWait = 10, window.maximize = TRUE");
+        driver.manage().timeouts().implicitlyWait(implicitlyWait, TimeUnit.SECONDS);
+        if (windowMaximize)
+            driver.manage().window().maximize();
+        CustomLogger.info("Driver configured with parameters: implicitlyWait = " + implicitlyWait + ", window.maximize = " + windowMaximize);
         return driver;
     }
 
